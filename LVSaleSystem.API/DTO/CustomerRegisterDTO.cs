@@ -16,5 +16,7 @@ namespace LVSaleSystem.API.DTO
         [Required]
         [CPF(ErrorMessage = "CPF inválido")]
         public string CPF { get; set; }
+        [Required]
+        public int Quantity { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 {
     public enum ClothingType
     {
-        Shirt = 0,
+        Shirt = 1,
         TShirt,
         Pants,
         Shorts,

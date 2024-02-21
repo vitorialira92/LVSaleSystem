@@ -5,7 +5,7 @@ using LVSaleSystem.API.Model.Transactions;
 
 namespace LVSaleSystem.API.Repositories
 {
-    public class ProductsRepository : IRepository<Clothing>
+    public class ProductsRepository //: IRepository<Clothing>
     {
         private readonly LVContext _context;
 
@@ -14,9 +14,13 @@ namespace LVSaleSystem.API.Repositories
             _context = context;
         }
 
-        public Clothing Add(Clothing entity)
+        public Clothing Add(Clothing entity, int stock)
         {
-            throw new NotImplementedException();
+            _context.Clothings.Add(entity);
+            _context.ClothingStocks.Add(new ClothingStock { Item = entity, 
+                Quantity = stock });
+            _context.SaveChanges();
+            return entity;
         }
 
         public void Delete(Clothing entity)
@@ -50,6 +54,17 @@ namespace LVSaleSystem.API.Repositories
             _context.Update(stock);
             _context.SaveChanges();
             return true;
+        }
+
+        internal List<Clothing> GetAll()
+        {
+            return _context.Clothings.ToList();
+        }
+
+        internal void AddClothingPicture(Clothing clothing)
+        {
+            _context.Update(clothing);
+            _context.SaveChanges();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.ComponentModel.DataAnnotations;
 
 namespace LVSaleSystem.API.Model.Users
 {
@@ -12,5 +13,6 @@ namespace LVSaleSystem.API.Model.Users
         public string Email { get; set; }
         [Required]
         public virtual UserDetails UserDetails { get; set; }
+
     }
 }
