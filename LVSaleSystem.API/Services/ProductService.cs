@@ -40,11 +40,12 @@ namespace LVSaleSystem.API.Services
                 throw new ResourceNotFoundException("Peça de roupa", 400);
 
 
-            var fileName = new Guid().ToString();
+            var fileName = Guid.NewGuid().ToString();
+            var extensao = Path.GetExtension(picture.FileName);
 
-            clothing.PictureFileName = fileName;
+            clothing.PictureFileName = fileName + extensao;
 
-            var path = $"wwwroot/{picture.FileName}";
+            var path = $"wwwroot/{fileName}{extensao}";
 
             using (var fileStream = System.IO.File.Create(path))
             {
