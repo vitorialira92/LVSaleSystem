@@ -3,6 +3,7 @@ using System;
 using LVSaleSystem.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LVSaleSystem.API.Migrations
 {
     [DbContext(typeof(LVContext))]
-    partial class LVContextModelSnapshot : ModelSnapshot
+    [Migration("20240221165018_ImageNotMandatoryA")]
+    partial class ImageNotMandatoryA
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

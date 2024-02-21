@@ -34,8 +34,10 @@ namespace LVSaleSystem.API
             builder.Services.AddScoped<ManagerRepository>();
             builder.Services.AddScoped<ReturnsRepository>();
 
+            builder.Services.AddScoped<ProductService>();
             builder.Services.AddScoped<CustomerService>();
             builder.Services.AddScoped<SellingService>();
+            builder.Services.AddScoped<ManagerService>();
             builder.Services.AddScoped<ReturnsService>();
             builder.Services.AddScoped<LoginService>();
 

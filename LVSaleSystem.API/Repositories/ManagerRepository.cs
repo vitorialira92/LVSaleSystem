@@ -13,7 +13,9 @@ namespace LVSaleSystem.API.Repositories
 
         public Manager Add(Manager entity)
         {
-            throw new NotImplementedException();
+            _context.Managers.Add(entity);
+            _context.SaveChanges();
+            return entity;
         }
 
         public void Delete(Manager entity)

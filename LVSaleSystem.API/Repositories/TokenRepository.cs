@@ -40,7 +40,7 @@ namespace LVSaleSystem.API.Repositories
         public Token GetByValue(string value)
         {
             var token = _context.Tokens.FirstOrDefault(x => x.Value == value);
-            if (token?.ExpiresAt > DateTime.UtcNow)
+            if (token?.ExpiresAt < DateTime.UtcNow)
             {
                 Delete(token);
                 return null;
