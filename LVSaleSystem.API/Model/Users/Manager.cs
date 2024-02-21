@@ -2,7 +2,7 @@
 
 namespace LVSaleSystem.API.Model.Users
 {
-    public class Manager
+    public class Manager : IUser
     {
         [Key]
         public int Id { get; set; }
@@ -11,6 +11,6 @@ namespace LVSaleSystem.API.Model.Users
         [Required]
         public string Email { get; set; }
         [Required]
-        public UserDetails UserDetails { get; set; }
+        public virtual UserDetails UserDetails { get; set; }
     }
 }

@@ -16,6 +16,10 @@ namespace LVSaleSystem.API.Model.Products
         public decimal Price { get; set; }
         [Required]
         public ClothingType Type { get; set; }
+        [Required]
+        public string PictureFileName { get; set; }
+
+        public Clothing() { }
 
         public bool UpdateDescription(string newDescription)
         {

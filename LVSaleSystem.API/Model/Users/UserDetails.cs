@@ -16,6 +16,7 @@ namespace LVSaleSystem.API.Model.Users
         public string HashedPassword { get;  set; }
         [Required]
         public string Salt { get;  set; }
+        [Required]
         public UserRole Role { get; set; }
         public UserDetails() { }
         public UserDetails(string username, string password, UserRole role)
